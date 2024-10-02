@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |Caps |Nxt|Prv|Stp|Ply|Sel|   |   |Psc|Slk|Pus|Up |Ins|Del  |     -*- 代表按键透传, 主要准对功能按键(下同)
      * |-----------------------------------------------------------|
-     * | -*-  |VoD|VoU|Mut|Ejc|   |PWD|   |Hom|PgU|Lef|Rig|  -*-   |
+     * | -*-  |VoD|VoU|Mut|Ejc|  |RPWD|   |Hom|PgU|Lef|Rig|  -*-   |
      * |-----------------------------------------------------------|
      * |  -*-   |TGm|Tkb|Nkr|Lck|Clr|Rep|   |End|PgD|Dow|  -*- |-*-|
      * |-----------------------------------------------------------|
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_RFN] = LAYOUT_60_tsangan_hhkb(
         KC_SLEP, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_HELP, KC_KB_POWER,
         KC_CAPS, KC_MNXT, KC_MPRV, KC_MSTP, KC_MPLY, KC_MSEL, KC_NO, KC_NO, KC_PSCR, KC_SCRL, KC_PAUS, KC_UP, KC_INS, KC_DEL,
-        KC_TRNS, KC_VOLD, KC_VOLU, KC_MUTE, KC_EJCT, KC_NO, PWD_MACRO, KC_NO, KC_HOME, KC_PGUP, KC_LEFT, KC_RGHT, KC_TRNS,
+        KC_TRNS, KC_VOLD, KC_VOLU, KC_MUTE, KC_EJCT, KC_NO, CK_PWD(ROOT), KC_NO, KC_HOME, KC_PGUP, KC_LEFT, KC_RGHT, KC_TRNS,
         KC_TRNS, TG(_MOUSE), KB_TOGG, NK_TOGG, QK_LOCK, EE_CLR, QK_REP, KC_NO, KC_END, KC_PGDN, KC_DOWN, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_WAKE, KC_APP, KC_TRNS),
 
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |-----------------------------------------------------------|
      * |Caps |   |Up |Stp|Ply|Hom|   |   |Psc|Slk|Pus|Up |Ins|Del  |
      * |-----------------------------------------------------------|
-     * | -*-  |Lef|Dow|Rig|End|   |PWD|   |Hom|PgU|Lef|Rig|  -*-   |
+     * | -*-  |Lef|Dow|Rig|End|  |UPWD|   |Hom|PgU|Lef|Rig|  -*-   |
      * |-----------------------------------------------------------|
      * |  -*-   |TGm|Tkb|Nkr|Lck|Clr|Rep|   |End|PgD|Dow|  -*- |-*-|
      * |-----------------------------------------------------------|
@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_LFN] = LAYOUT_60_tsangan_hhkb(
         KC_SLEP, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_HELP, KC_KB_POWER,
         KC_CAPS, KC_NO, KC_UP, KC_MSTP, KC_MPLY, KC_HOME, KC_NO, KC_NO, KC_PSCR, KC_SCRL, KC_PAUS, KC_UP, KC_INS, KC_DEL,
-        KC_TRNS, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_NO, PWD_MACRO, KC_NO, KC_HOME, KC_PGUP, KC_LEFT, KC_RGHT, KC_TRNS,
+        KC_TRNS, KC_LEFT, KC_DOWN, KC_RGHT, KC_END, KC_NO, CK_PWD(USER), KC_NO, KC_HOME, KC_PGUP, KC_LEFT, KC_RGHT, KC_TRNS,
         KC_TRNS, TG(_MOUSE), KB_TOGG, NK_TOGG, QK_LOCK, EE_CLR, QK_REP, KC_NO, KC_END, KC_PGDN, KC_DOWN, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_WAKE, KC_APP, KC_TRNS),
 

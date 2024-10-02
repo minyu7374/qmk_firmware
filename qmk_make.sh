@@ -40,7 +40,17 @@ keymap=$keymap_def
 flash=false
 via=false
 macro=false
-passwd=""
+passwd_macros=()
+
+read_passwd() {
+	echo -n "Enter Password for $1: "
+    read -s -r pwd; echo
+	[ -n "$pwd" ] && {
+		local def="-D$1=\"${pwd//\"/\\\"}\""; #echo "$def"
+		local def_trans; def_trans="$(echo -n "$def" | sed 's/\\/\\\\/g; s/"/\\"/g; s/#/\\#/g')"; #echo "$def_trans"
+		passwd_macros+=("$def_trans")
+	}
+}
 
 while true; do
 	case "$1" in
@@ -69,8 +79,8 @@ while true; do
 		shift
 		;;
 	-p | --passwd)
-        echo -n "Enter Password for PWD_MACRO: "
-        read -s -r passwd; echo
+		read_passwd USER_PASSWD
+		read_passwd ROOT_PASSWD
 		shift
 		;;
 	--)
@@ -91,9 +101,7 @@ done
 target="$keyboard:$keymap"
 [ "$flash" == true ] && target+=":flash"
 
-extra_flags=""
-[ "$macro" == true ] && extra_flags+="-DCUSTOM_MACRO_OPEN"
-[ -n "$passwd" ] && extra_flags+=' -DUSER_PASSWD=\"'"$passwd"'\"'
+[ "$macro" == true ] && extra_flags+="-DCUSTOM_MACRO_OPEN ${passwd_macros[*]}"
 
 make clean
 make EXTRAFLAGS="$extra_flags" "$target"
