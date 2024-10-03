@@ -1,1 +1,1 @@
-../default/rules.mk
+../_default/rules.mk

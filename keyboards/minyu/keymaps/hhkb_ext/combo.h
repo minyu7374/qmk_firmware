@@ -1,1 +1,1 @@
-../hhkb/combo.h
+../_default/combo.h
