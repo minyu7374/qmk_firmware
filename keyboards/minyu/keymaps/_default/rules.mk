@@ -1,16 +1,16 @@
 # via相关
-VIA_ENABLE = yes
-VIA_QMK_SUPPORT_ENABLE = yes
+VIA_ENABLE = no
+VIA_QMK_SUPPORT_ENABLE = no
 VIA_JSON = via_info.json
 # DYNAMIC_KEYMAP_LAYER_COUNT = 5
 
 LTO_ENABLE = yes
 
-# 开发时使用，对于没有reset物理按钮的板子，方便进dfu
-# . This is great for boards that don't have a physical reset button, giving you a way to jump into the bootloader
-BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
+# 对于没有reset物理按钮的板子，方便进dfu
+# Enable Bootmagic Lite. This is great for boards that don't have a physical reset button, giving you a way to jump into the bootloader
+BOOTMAGIC_ENABLE = no
 
-COMBO_ENABLE = yes
+COMBO_ENABLE = no
 KEY_LOCK_ENABLE = yes
 
 MOUSEKEY_ENABLE = yes       # Mouse keys
